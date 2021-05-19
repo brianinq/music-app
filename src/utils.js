@@ -1,6 +1,6 @@
 import {
     v4 as uuid
-} from 'uuidv4'
+} from "uuid";
 
 function library() {
     return [{
@@ -10,7 +10,7 @@ function library() {
             audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
             color: ["#205950", "#2ab3bf"],
             id: uuid(),
-            active: true,
+            active: true
         },
         {
             name: "Daylight",
@@ -19,7 +19,7 @@ function library() {
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
             color: ["#EF8EA9", "#ab417f"],
             id: uuid(),
-            active: false,
+            active: false
         },
         {
             name: "Keep Going",
@@ -28,7 +28,7 @@ function library() {
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9222",
             color: ["#CD607D", "#c94043"],
             id: uuid(),
-            active: false,
+            active: false
         },
         {
             name: "Nightfall",
@@ -37,7 +37,7 @@ function library() {
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9148",
             color: ["#EF8EA9", "#ab417f"],
             id: uuid(),
-            active: false,
+            active: false
         },
         {
             name: "Reflection",
@@ -46,7 +46,7 @@ function library() {
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9228",
             color: ["#CD607D", "#c94043"],
             id: uuid(),
-            active: false,
+            active: false
         },
         {
             name: "Under the City Stars",
@@ -55,10 +55,10 @@ function library() {
             audio: "https://mp3.chillhop.com/serve.php/?mp3=10074",
             color: ["#205950", "#2ab3bf"],
             id: uuid(),
-            active: false,
+            active: false
         }
     ]
 
 }
 
-export default library
+export default library;
