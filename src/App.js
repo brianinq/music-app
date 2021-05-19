@@ -1,8 +1,11 @@
 import React from 'react'
+import Song from './components/Song'
+import Player from './components/player'
 
 function App() {
-  return ( <div>
-    <h1> Music App🎶 </h1> 
+  return ( <div className='App'>
+     <Song/>
+     <Player/>
     </div>
   )
 }
