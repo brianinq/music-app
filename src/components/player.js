@@ -16,8 +16,8 @@ function Player({currentSong, isPlaying, setIsPlaying}){
     }
 
     const [songInfo, setSongInfo] = useState({
-        currentTime: null,
-        duration: null
+        currentTime: 0,
+        duration: 0
     })
     function timeUpdateHandler(event){
         const current = event.target.currentTime
@@ -33,13 +33,17 @@ function Player({currentSong, isPlaying, setIsPlaying}){
             Math.floor(time/60) + ":"+("0"+Math.floor(time%60)).slice(-2)
         )
     }
+    function slideHandler(event){
+        audioRef.current.currentTime = event.target.value
+        setSongInfo({...songInfo, currentTime: event.target.value})
+    }
 
  
     return(
         <div className='player'>
             <div className='time-control'>
             <p>{getTime(songInfo.currentTime)}</p>
-            <input type="range" name="" id="" />
+            <input onChange={slideHandler} min={0} max={songInfo.duration} value={songInfo.currentTime} type="range" name="" id="" />
             <p>{getTime(songInfo.duration)}</p>
             </div>
             <div className="play-control">
