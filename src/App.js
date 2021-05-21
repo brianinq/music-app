@@ -3,6 +3,8 @@ import './styles/app.scss'
 import Song from './components/Song'
 import Player from './components/player'
 import data from './utils'
+import Library from './components/Library'
+import { library } from '@fortawesome/fontawesome-svg-core'
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
      isPlaying={isPlaying} 
      setIsPlaying ={setIsPlaying}
      />
+     <Library songs={songs}/>
     </div>
   )
 }
