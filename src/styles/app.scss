@@ -3,10 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
 @import './player';
 @import './song'; 
+@import './library';
 
-h1, h2, h3 {
-    color: #333;
+h1, h2, h3, h4 {
+    color: #202020;
+}
+h3, h4, h5 {
+    font-weight: 400;
+    color: rgb(61, 56, 56);
+}
+h1{
+    font-weight: 700;
+}
+
+body{
+    font-family: 'Merienda', sans-serif;
 }
