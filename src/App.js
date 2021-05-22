@@ -18,8 +18,10 @@ function App() {
     <Nav libraryOpen={libraryOpen} setLibraryOpen={setLibraryOpen}/>
      <Song currentSong={currentSong}/>
      <Player 
+     songs={songs}
      audioRef={audioRef}
      currentSong={currentSong} 
+     setCurrentSong={setCurrentSong}
      isPlaying={isPlaying} 
      setIsPlaying ={setIsPlaying}
      />
