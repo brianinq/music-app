@@ -42,7 +42,7 @@ function Player({currentSong, isPlaying, setIsPlaying, audioRef}){
         <div className='player'>
             <div className='time-control'>
             <p>{getTime(songInfo.currentTime)}</p>
-            <input onChange={slideHandler} min={0} max={songInfo.duration} value={songInfo.currentTime} type="range" name="" id="" />
+            <input onChange={slideHandler} min={0} max={songInfo.duration || 0} value={songInfo.currentTime} type="range" name="" id="" />
             <p>{getTime(songInfo.duration)}</p>
             </div>
             <div className="play-control">
