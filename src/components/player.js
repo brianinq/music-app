@@ -1,10 +1,9 @@
-import React, {useRef, useState} from 'react'
+import React, { useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPlay, faAngleLeft, faAngleRight, faPause} from '@fortawesome/free-solid-svg-icons'
 
-function Player({currentSong, isPlaying, setIsPlaying}){
+function Player({currentSong, isPlaying, setIsPlaying, audioRef}){
     //useRef to select an element on the document
-    const audioRef = useRef(null)
     function playSongHandler(){
         if (isPlaying){
             audioRef.current.pause()
