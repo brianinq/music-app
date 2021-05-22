@@ -49,3 +49,11 @@
     background: transparent;
     width: 5px;
 }
+.active{
+    background: #15a7e0;
+    transform: scale(1.1);
+        
+    h3,h4,h5{
+    color: #000;
+    }
+}
