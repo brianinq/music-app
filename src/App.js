@@ -4,7 +4,7 @@ import Song from './components/Song'
 import Player from './components/player'
 import data from './utils'
 import Library from './components/Library'
-import { Fontawesome } from '@fortawesome/fontawesome-svg-core'
+import Nav from './components/Nav'
 
 function App() {
 
@@ -12,8 +12,10 @@ function App() {
   const audioRef = useRef(null)
   const [currentSong, setCurrentSong]= useState(songs[2])
   const [isPlaying, setIsPlaying] = useState(false)
+  const [libraryOpen, setLibraryOpen]= useState(false)
 
   return ( <div className='App'>
+    <Nav libraryOpen={libraryOpen} setLibraryOpen={setLibraryOpen}/>
      <Song currentSong={currentSong}/>
      <Player 
      audioRef={audioRef}
@@ -21,7 +23,7 @@ function App() {
      isPlaying={isPlaying} 
      setIsPlaying ={setIsPlaying}
      />
-     <Library audioRef={audioRef} songs={songs} setCurrentSong={setCurrentSong} isPlaying={isPlaying} setSongs={setSongs}/>
+     <Library audioRef={audioRef} songs={songs} setCurrentSong={setCurrentSong} isPlaying={isPlaying} setSongs={setSongs} libraryOpen={libraryOpen}/>
     </div>
   )
 }
