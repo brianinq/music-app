@@ -21,7 +21,7 @@ function App() {
      isPlaying={isPlaying} 
      setIsPlaying ={setIsPlaying}
      />
-     <Library audioRef={audioRef} songs={songs} setCurrentSong={setCurrentSong} isPlaying={isPlaying}/>
+     <Library audioRef={audioRef} songs={songs} setCurrentSong={setCurrentSong} isPlaying={isPlaying} setSongs={setSongs}/>
     </div>
   )
 }
