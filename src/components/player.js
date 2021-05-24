@@ -41,13 +41,16 @@ function Player({currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef,
         let currentIndex = songs.indexOf(currentSong)
         if (direction==='next'){
             await setCurrentSong(songs[(currentIndex + 1)%songs.length])
+            if (isPlaying)audioRef.current.play()
         }
         if (direction==='previous'){
             if ((currentIndex - 1) % songs.length === -1){
                 await setCurrentSong(songs[songs.length - 1])
+                if (isPlaying)audioRef.current.play()
                 return;
             }
             await setCurrentSong(songs[(currentIndex - 1)%songs.length])
+            if (isPlaying)audioRef.current.play()
         }
     }
  
