@@ -1,8 +1,8 @@
 import React from 'react'
 
 function LibrarySong({song, setCurrentSong, audioRef, isPlaying, songs, setSongs}){
-    function songHandler(event){
-        setCurrentSong(song)
+    async function songHandler(event){
+        await setCurrentSong(song)
 
         //change active song
         const newSongs = songs.map((s) => {
@@ -14,14 +14,7 @@ function LibrarySong({song, setCurrentSong, audioRef, isPlaying, songs, setSongs
         })
         setSongs(newSongs)
 
-        if(isPlaying){
-            const PlayPromise = audioRef.current.play();
-            if(PlayPromise){
-                PlayPromise.then((audio)=>{
-                    audioRef.current.play()
-                })
-            }
-        }
+        if(isPlaying) audioRef.current.play()
     }
     return(
         <div onClick={songHandler} className={`library-song ${song.active && 'active'}`}>

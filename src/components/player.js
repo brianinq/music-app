@@ -37,33 +37,33 @@ function Player({currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef,
         setSongInfo({...songInfo, currentTime: event.target.value})
     }
     
-    function skipTrack(direction){
+    async function skipTrack(direction){
         let currentIndex = songs.indexOf(currentSong)
         if (direction==='next'){
-            setCurrentSong(songs[(currentIndex + 1)%songs.length])
+            await setCurrentSong(songs[(currentIndex + 1)%songs.length])
         }
         if (direction==='previous'){
             if ((currentIndex - 1) % songs.length === -1){
-                setCurrentSong(songs[songs.length - 1])
+                await setCurrentSong(songs[songs.length - 1])
                 return;
             }
-            setCurrentSong(songs[(currentIndex - 1)%songs.length])
+            await setCurrentSong(songs[(currentIndex - 1)%songs.length])
         }
     }
  
     return(
         <div className='player'>
             <div className='time-control'>
-            <p>{getTime(songInfo.currentTime)}</p>
+            <p>{getTime(songInfo.currentTime ) || '0:00'}</p>
             <input onChange={slideHandler} min={0} max={songInfo.duration || 0} value={songInfo.currentTime} type="range" name="" id="" />
-            <p>{getTime(songInfo.duration)}</p>
+            <p>{getTime(songInfo.duration ) || '0:00'}</p>
             </div>
             <div className="play-control">
                 <FontAwesomeIcon className='skip-back' size='2x' icon={faAngleLeft} onClick={()=>{skipTrack('previous')}} />
                 <FontAwesomeIcon className='play' size='2x' icon={isPlaying ? faPause :faPlay} onClick={playSongHandler} />
                 <FontAwesomeIcon className='skip-forward' size='2x' icon={faAngleRight} onClick={()=>{skipTrack('next')}} />
             </div>
-            <audio onLoadedMetadata={timeUpdateHandler} onTimeUpdate={timeUpdateHandler} ref={audioRef} src={currentSong.audio}></audio>
+            <audio onLoadedMetadata={timeUpdateHandler} onTimeUpdate={timeUpdateHandler} ref={audioRef} src={currentSong.audio} onEnded={()=>{skipTrack('next')}}></audio>
         </div>
     )
 }
