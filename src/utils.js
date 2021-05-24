@@ -10,7 +10,7 @@ function library() {
             audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
             color: ["#205950", "#2ab3bf"],
             id: uuid(),
-            active: true
+            active: false
         },
         {
             name: "Daylight",
@@ -28,7 +28,7 @@ function library() {
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9222",
             color: ["#CD607D", "#c94043"],
             id: uuid(),
-            active: false
+            active: true
         },
         {
             name: "Nightfall",
