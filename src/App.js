@@ -14,7 +14,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [libraryOpen, setLibraryOpen]= useState(false)
 
-  return ( <div className='App'>
+  return ( <div className={`'App' ${libraryOpen && 'library-animate'}`}>
     <Nav libraryOpen={libraryOpen} setLibraryOpen={setLibraryOpen}/>
      <Song currentSong={currentSong}/>
      <Player 
